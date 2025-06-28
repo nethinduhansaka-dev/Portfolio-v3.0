@@ -1,0 +1,235 @@
+@import "tailwindcss";
+
+/* Official Brand Colors */
+:root {
+  /* GitHub */
+  --github-color: #000000;
+  
+  /* YouTube */
+  --youtube-color: #FF0000;
+  
+  /* ChatGPT */
+  --chatgpt-color: #10A37F;
+  
+  /* Perplexity */
+  --perplexity-color: #1FB6FF;
+  
+  /* Gemini */
+  --gemini-primary: #4285F4;
+  --gemini-secondary: #9C27B0;
+  
+  /* Technology Colors */
+  --react-color: #61DAFB;
+  --python-color: #3776AB;
+  --javascript-color: #F7DF1E;
+  --nodejs-color: #339933;
+  --android-color: #3DDC84;
+  --java-color: #ED8B00;
+  --html5-color: #E34F26;
+  --css3-color: #1572B6;
+  --tailwind-color: #06B6D4;
+  --django-color: #092E20;
+  --flask-color: #FFFFFF;
+  --mysql-color: #4479A1;
+  --mongodb-color: #47A248;
+  --git-color: #F05032;
+  --linkedin-color: #0A66C2;
+  --medium-color: #000000;
+  --email-color: #EA4335;
+}
+
+/* Custom gradient for Gemini */
+.gemini-gradient {
+  background: linear-gradient(45deg, var(--gemini-primary), var(--gemini-secondary));
+}
+
+/* Brand color utilities */
+.text-github { color: var(--github-color); }
+.text-youtube { color: var(--youtube-color); }
+.text-chatgpt { color: var(--chatgpt-color); }
+.text-perplexity { color: var(--perplexity-color); }
+.text-gemini { color: var(--gemini-primary); }
+.text-react { color: var(--react-color); }
+.text-python { color: var(--python-color); }
+.text-javascript { color: var(--javascript-color); }
+.text-nodejs { color: var(--nodejs-color); }
+.text-android { color: var(--android-color); }
+.text-java { color: var(--java-color); }
+.text-html5 { color: var(--html5-color); }
+.text-css3 { color: var(--css3-color); }
+.text-tailwind { color: var(--tailwind-color); }
+.text-django { color: var(--django-color); }
+.text-mysql { color: var(--mysql-color); }
+.text-mongodb { color: var(--mongodb-color); }
+.text-git { color: var(--git-color); }
+.text-linkedin { color: var(--linkedin-color); }
+.text-medium { color: var(--medium-color); }
+.text-email { color: var(--email-color); }
+
+/* Background colors */
+.bg-github { background-color: var(--github-color); }
+.bg-youtube { background-color: var(--youtube-color); }
+.bg-chatgpt { background-color: var(--chatgpt-color); }
+.bg-perplexity { background-color: var(--perplexity-color); }
+.bg-react { background-color: var(--react-color); }
+.bg-python { background-color: var(--python-color); }
+.bg-javascript { background-color: var(--javascript-color); }
+.bg-nodejs { background-color: var(--nodejs-color); }
+.bg-android { background-color: var(--android-color); }
+.bg-linkedin { background-color: var(--linkedin-color); }
+
+/* Dark theme enhancements */
+body {
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 25%, #2d2d2d 75%, #1a1a1a 100%);
+  min-height: 100vh;
+}
+
+/* Badge enhancements */
+.tech-badge {
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+.tech-badge:hover::before {
+  left: 100%;
+}
+
+/* Technology badge links */
+a img[alt] {
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+a:hover img[alt] {
+  transform: scale(1.05);
+}
+
+/* Card glow effects */
+.project-card {
+  position: relative;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* Ensure pseudo-element doesn't block clicks */
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure buttons and links are clickable */
+.project-card a,
+.project-card button {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+/* Fix for button hover states */
+button:hover,
+a:hover {
+  cursor: pointer;
+}
+
+/* Section dividers */
+.section-divider {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  height: 1px;
+  width: 100%;
+}
+
+/* Smooth transitions for interactive elements */
+button, a, .hover\:bg-gray-900, .hover\:bg-red-600, .hover\:bg-blue-600, .hover\:bg-black {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}
+
+/* Base styles for the minimalist black and white portfolio */
+html {
+  scroll-behavior: auto; /* No smooth scrolling for instant navigation */
+}
+
+body {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  background-color: #000000;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Ensure all text selections maintain high contrast */
+::selection {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666666;
+}
